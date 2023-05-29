@@ -23,13 +23,13 @@ public class CustomerJdbcCommandLineRunner implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-		cust_repo.insert((new Customer(1,"Karen","Credit Card",300)));
-		cust_repo.insert((new Customer(2,"Brandon","NETS",265)));
-		cust_repo.insert((new Customer(3,"Silva","Cash",100)));
+		cust_repo.save((new Customer(1,"Karen","Credit Card",300)));
+		cust_repo.save((new Customer(2,"Brandon","NETS",265)));
+		cust_repo.save((new Customer(3,"Silva","Cash",100)));
 		
-		cust_repo.delete(3);
+		cust_repo.deleteById((long) 3);
 		
-		System.out.println(cust_repo.read(1));
-		System.out.println(cust_repo.read(2));
+		System.out.println(cust_repo.findById((long) 1));
+		System.out.println(cust_repo.findById((long) 2));
 	}
 }
