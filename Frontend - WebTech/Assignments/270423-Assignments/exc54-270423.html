@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emmanuel Lim</title>
+    <style>
+        .container{
+            background-color: black;
+            padding:10px;
+            display:grid;
+            grid-template-columns: 60px 120px 30px 30px 30px;
+            grid-template-rows: auto 70px;
+            column-gap: 10px;
+            row-gap: 10px;
+            width:400px;
+        }
+        .item{
+            padding:5px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .item1{
+            grid-column-start: 2;
+            grid-column-end: 9;
+            grid-row: 2/9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1" style="background-color: red;">1</div>
+        <div class="item item2" style="background-color: yellow;">2</div>
+        <div class="item item3" style="background-color: blue;">3</div>
+        <div class="item item4" style="background-color: grey;">4</div>
+        <div class="item item5" style="background-color: limegreen;">5</div>
+        <div class="item item6" style="background-color:darkgoldenrod;">6</div>
+    </div>
+
+</body>
+</html>
+
+        

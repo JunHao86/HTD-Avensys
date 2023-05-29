@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emmanuel Lim</title>
+    <style>
+        .container-a{
+            height:150px;
+            width:150px;
+            background-color: lightblue;
+            animation-delay: 800ms;
+            animation-name: anime;
+            animation-duration:3500ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            margin:0px;
+        }
+        @keyframes anime{
+            25%{
+                margin:0px 0px 0px 400px;
+            }
+            50%{
+                margin:400px 0px 0px 400px;
+            }
+            75%{
+                margin:400px 0px 0px 0px;
+            }
+            100%{
+                margin:0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-b">
+    <div class="container-a"></div>
+    </div>
+
+</body>
+</html>
+
+        
