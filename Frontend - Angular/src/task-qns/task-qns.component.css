@@ -1,0 +1,22 @@
+.c1{
+    background-color:lavenderblush;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+.c2{
+    background-color:mediumturquoise;
+    border: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.c3{
+    background-color:lightgreen;
+    border:2px solid;
+    margin-top:5px;
+    margin-bottom:5px
+}
+/* For multipleClass in c2 */
+.mg{
+    background-color: grey;
+    color:aqua;
+}
