@@ -2,6 +2,9 @@ package com.demo.learnspringframework.jakartaEE;
 
 import java.util.Arrays;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import jakarta.*;
 
 import org.springframework.beans.BeansException;
