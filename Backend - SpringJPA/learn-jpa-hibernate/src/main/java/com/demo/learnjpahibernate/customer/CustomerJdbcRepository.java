@@ -5,11 +5,17 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+/* Week 6 - Day 1
+ * Completed on 2023/05/29
+ */
+
 @Repository
 public class CustomerJdbcRepository {
 	
 	@Autowired
 	private JdbcTemplate springJdbcTemplate;
+	
+	//==================================================================
 	
 	//Create operation
 	private static String INSERT_QUERY =
@@ -22,6 +28,8 @@ public class CustomerJdbcRepository {
 	//Delete operation
 	private static String DELETE_QUERY = 
 			"delete from Customer where id = ?";
+	
+	//==================================================================
 	
 	//Create operation
 	public void insert(Customer cust) {

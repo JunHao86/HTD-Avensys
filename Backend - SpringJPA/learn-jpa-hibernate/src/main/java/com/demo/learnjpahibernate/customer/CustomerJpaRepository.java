@@ -6,12 +6,18 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
+/* Week 6 - Day 1
+ * Completed on 2023/05/29
+ */
+
 @Repository
 @Transactional
 public class CustomerJpaRepository {
 
 	@PersistenceContext
 	private EntityManager customerManager;
+	
+	//==================================================================
 	
 	public void insert(Customer customer) {
 		customerManager.merge(customer);

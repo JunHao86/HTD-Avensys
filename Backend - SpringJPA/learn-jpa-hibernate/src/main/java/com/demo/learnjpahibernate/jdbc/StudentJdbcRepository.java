@@ -7,11 +7,17 @@ import org.springframework.stereotype.Repository;
 
 import com.demo.learnjpahibernate.student.Student;
 
+/* Week 6 - Day 1
+ * Completed on 2023/05/29
+ */
+
 @Repository
 public class StudentJdbcRepository {
 	
 	@Autowired
 	private JdbcTemplate springJdbcTemplate;
+	
+	//==================================================================
 	
 	//Create operation
 	private static String INSERT_QUERY =
@@ -24,6 +30,8 @@ public class StudentJdbcRepository {
 	//Delete operation
 	private static String DELETE_QUERY = 
 			"delete from Student where id = ?";
+	
+	//==================================================================
 	
 	//Create operation
 	public void insert(Student student) {

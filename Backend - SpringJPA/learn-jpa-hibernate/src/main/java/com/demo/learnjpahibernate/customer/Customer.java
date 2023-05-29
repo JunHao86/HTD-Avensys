@@ -4,6 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+/* Week 6 - Day 1
+ * Completed on 2023/05/29
+ */
+
+
 @Entity
 public class Customer {
 
@@ -19,6 +24,8 @@ public class Customer {
 	@Column(name="payment_amount")
 	private int payment_amount;
 	
+	//==================================================================
+	
 	public Customer() {
 	}
 	
@@ -30,10 +37,14 @@ public class Customer {
 		this.payment_amount = payment_amount;
 	}
 
+	//==================================================================
+	
 	@Override
 	public String toString() {
 		return "id - " + id + ", name - " + name + ", payment mode - " + payment_type + ", amount payable - " + payment_amount + ".";
 	}
+	
+	//==================================================================
 
 	public long getId() {
 		return id;
@@ -66,6 +77,4 @@ public class Customer {
 	public void setPayment_amount(int payment_amount) {
 		this.payment_amount = payment_amount;
 	}
-	
-	
 }

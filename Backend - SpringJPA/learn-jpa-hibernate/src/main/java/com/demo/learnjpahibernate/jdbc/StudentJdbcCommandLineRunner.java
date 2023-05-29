@@ -8,6 +8,10 @@ import com.demo.learnjpahibernate.student.Student;
 import com.demo.learnjpahibernate.student.jpa.StudentJpaRepository;
 import com.demo.learnjpahibernate.student.jpa.StudentSpringDataJpaRepository;
 
+/* Week 6 - Day 1
+ * Completed on 2023/05/29
+ */
+
 //@Component
 //public class StudentJdbcCommandLineRunner implements CommandLineRunner {
 //
@@ -19,6 +23,8 @@ import com.demo.learnjpahibernate.student.jpa.StudentSpringDataJpaRepository;
 ////	
 ////	@Autowired
 ////	private StudentSpringDataJpaRepository student_repo;
+//	
+//	//==================================================================
 //	
 //	@Override
 //	public void run(String... args) throws Exception {		
