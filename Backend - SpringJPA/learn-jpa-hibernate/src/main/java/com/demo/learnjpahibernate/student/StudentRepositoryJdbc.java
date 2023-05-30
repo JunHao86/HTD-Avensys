@@ -1,18 +1,16 @@
-package com.demo.learnjpahibernate.jdbc;
+package com.demo.learnjpahibernate.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.demo.learnjpahibernate.student.Student;
-
 /* Week 6 - Day 1
  * Completed on 2023/05/29
  */
 
 @Repository
-public class StudentJdbcRepository {
+public class StudentRepositoryJdbc {
 	
 	@Autowired
 	private JdbcTemplate springJdbcTemplate;

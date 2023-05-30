@@ -1,8 +1,6 @@
-package com.demo.learnjpahibernate.student.jpa;
+package com.demo.learnjpahibernate.student;
 
 import org.springframework.stereotype.Repository;
-
-import com.demo.learnjpahibernate.student.Student;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -14,7 +12,7 @@ import jakarta.transaction.Transactional;
 
 @Repository
 @Transactional
-public class StudentJpaRepository {
+public class StudentRepositoryJpa {
 
 	@PersistenceContext //Specific autowiring used in databases to persist and store
 	private EntityManager entityManager;
