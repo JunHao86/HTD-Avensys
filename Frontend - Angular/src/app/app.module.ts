@@ -14,6 +14,7 @@ import { Comp3Component } from '../comp3/comp3.component';
 import { TaskQnsComponent } from '../task-qns/task-qns.component'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ProductComponent } from './product/product.component';
+import { Pg404Component } from '../pg404/pg404.component';
 
 @NgModule({
   // Components loaded in project
@@ -23,7 +24,8 @@ import { ProductComponent } from './product/product.component';
     Comp2Component,
     Comp3Component,
     TaskQnsComponent,
-    ProductComponent
+    ProductComponent,
+    Pg404Component
   ],
   // Modules for application
   imports: [
@@ -34,7 +36,7 @@ import { ProductComponent } from './product/product.component';
     MatButtonModule,
     MatButtonToggleModule
   ],
-  // Services are added here
+  // Services are added here (290523)
   providers: [
   //   {provide:LocationStrategy,
   // useClass:HashLocationStrategy},

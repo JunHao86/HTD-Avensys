@@ -1,7 +1,9 @@
+/* Rotate between the three */
 .c1{
     background-color:lavenderblush;
     border: 2px solid;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .c2{
     background-color:mediumturquoise;
@@ -15,8 +17,24 @@
     margin-top:5px;
     margin-bottom:5px
 }
-/* For multipleClass in c2 */
+/* For example in ngClass */
 .mg{
     background-color: grey;
     color:aqua;
+}
+
+/* For embedded divs */
+.ed{
+    border:2px solid;
+    margin:3px;
+}
+
+/* for table examples */
+.table-ex{
+    border-style:solid;
+    border-width: 4px;
+    border-color:darkblue;
+    border-collapse: collapse;
+    text-align: center;
+    margin:3px;
 }

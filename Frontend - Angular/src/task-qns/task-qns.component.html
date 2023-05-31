@@ -2,58 +2,63 @@
 <div class="c1">
 <h1> 24th May 2023 </h1>
 <h2> ngFor, ngIf</h2>
-
-<p>Creating a list: </p>
-
-<ul>
-  <div *ngFor="let a of contacts, index as i, first as f, last as l, even as e, odd as o">
-    <!-- <li *ngIf="f" style="background-color:darkkhaki;"> 
-      <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
-    </li>
-    <li *ngIf="l" style="background-color:mediumaquamarine;"> 
-      <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
-    </li> -->
-    <li *ngIf="e" style="background-color:darkkhaki;"> 
-      <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
-    </li>
-    <li *ngIf="o" style="background-color:mediumaquamarine;"> 
-      <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
-    </li>
+<h3> Structural directives</h3>
+  <!-- Structural directives - *ngFor, *ngIf  -->
+  <div class="ed">
+  <h3>Creating a list: </h3>
+    <ul>
+      <!-- index, first, last , even , odd -->
+      <div *ngFor="let a of contacts, index as i, first as f, last as l, even as e, odd as o">
+        <!-- <li *ngIf="f" style="background-color:darkkhaki;"> 
+          <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
+        </li>
+        <li *ngIf="l" style="background-color:mediumaquamarine;"> 
+          <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
+        </li> -->
+        <li *ngIf="e" style="background-color:darkkhaki;"> 
+          <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
+        </li>
+        <li *ngIf="o" style="background-color:mediumaquamarine;"> 
+          <h3>{{i+1}} - {{a.fn}} {{a.ln}} , ID: {{a.ID}}</h3> 
+        </li>
+      </div>
+    </ul>
   </div>
-</ul>
-
-<p>Creating a table: </p>
-
-<table>
-  <thead>  
-    <th>ID</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Results</th>
-  </thead>
-  <tbody *ngFor="let a of contacts, index as i, first as f, last as l, even as e, odd as o"> 
-    <tr *ngIf="e" style="background-color:darkkhaki;">
-      <td>{{i+1}}</td>
-      <td>{{a.fn}}</td>
-      <td>{{a.ln}}</td>
-      <td>{{a.ID}}</td>
-    </tr>
-    <tr *ngIf="o" style="background-color:mediumaquamarine;">
-      <td>{{i+1}}</td>
-      <td>{{a.fn}}</td>
-      <td>{{a.ln}}</td>
-      <td>{{a.ID}}</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="ed">
+  <h3>Creating a table: </h3>
+    <table>
+      <thead>  
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Results</th>
+      </thead>
+      <tbody *ngFor="let a of contacts, index as i, first as f, last as l, even as e, odd as o"> 
+        <tr *ngIf="e" style="background-color:darkkhaki;">
+          <td>{{i+1}}</td>
+          <td>{{a.fn}}</td>
+          <td>{{a.ln}}</td>
+          <td>{{a.ID}}</td>
+        </tr>
+        <tr *ngIf="o" style="background-color:mediumaquamarine;">
+          <td>{{i+1}}</td>
+          <td>{{a.fn}}</td>
+          <td>{{a.ln}}</td>
+          <td>{{a.ID}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <!-- =============================================================================== -->
 <div class="c2">
-    <h1> 24th May 2023 </h1>
+    <h1> 25th May 2023 </h1>
     <h2> ngSwitch, ngStyle, ngClass</h2>
-<!-- Switch, Style -->
-
+    <h3> More structural directives</h3>
+  <!-- Structural directives - [ngSwitch] , *ngSwitchCase , [ngStyle] -->
     <!-- Alter superpower, desiredColor variables in .ts file-->
+    <!-- Switch case decided using ngSwitch -->
+    <!-- Style attached using ngStyle, ternary operator -->
     <div [ngSwitch]="superpower" 
     [ngStyle]="{'color':desiredColor === 'red' ? 'blue' : 'red',
     'background-color':desiredBg}">
@@ -66,24 +71,155 @@
     <!-- Alter mg in .css file -->
     <div>
         <!-- Default -->
-        <span>{{dsentence}}</span>
+        <span>{{dsentence}}</span><br>
+        <!-- CSS attached using ngClass, ternary operator -->
         <span [ngClass]="multipleClass === 'd3'? 'd3': 'mg'">{{dsentence}}</span>
     </div>
 </div>
 <!-- =============================================================================== -->
 <div class="c3">
-    <h1> 24th May 2023</h1>
-    <h2> Two-way data binding</h2>
+    <h1> 25th May 2023</h1>
+    <h2> Data binding</h2>
+    <h3> Binding data from template to component, component to template</h3>
 <!-- Two-way data binding -->
-<input [(ngModel)] = "superpower">
-
+<input [(ngModel)] = "superpower"> P.S Notice how this changes the switchCase for ngSwitch if "Batman/Flash/Wonderwoman/NewGuy" is input.
 <!-- String Interpolation -->
-<div style="border:2px solid; margin:3px">
-    <h3>Using String interpolation </h3>
-    <span>{{superpower}}</span>
+<div class="ed">
+    <h3>Two-way Data Binding - Using String interpolation </h3>
+    <span>{{superpower}}</span> 
 </div>
 <!-- Property Binding -->
-<div style="border:2px solid; margin:3px">
-    <h3>Using Property binding</h3> <div [innerHTML] = "superpower"></div>
+<div class="ed">
+    <h3>Two-way Data Binding - Using String interpolation</h3> 
+    <div [innerHTML] = "superpower"></div>
+</div>
+<!-- Attribute Binding -->
+<div class="ed">
+  <h3>Attribute binding</h3> 
+  <table class="table-ex">
+    <thead>  
+      <th>ID</th>
+      <th [attr.colspan]="ab_head_value">Full Name</th>
+      <th>Results</th>
+    </thead>
+    <tbody>
+      <tr class="table-ex">
+        <td>1</td>
+        <td [attr.colspan]="ab_head_value">James Bond</td>
+        <td>2</td>
+      </tr>
+      <tr class="table-ex">
+        <td>1</td>
+        <td>Sean</td>
+        <td>Kingston</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Event Binding -->
+<div class="ed">
+  <h3> Event Binding</h3>
+  <div (mouseover) = "a('1','2','3')">
+    <button>Hover over me, but don't click me!</button> 
+  </div>
+  <br>
+  <div>
+    <button (click) ="hello()">Click me instead!</button>
+  </div>
+</div>
 </div>
 
+<!-- =============================================================================== -->
+<div class="c1">
+  <h1> 25th May 2023</h1>
+  <h2> Using Angular Materials (ng add @angular/material)</h2>
+<!-- Using Angular Material -->
+  <div class="ed">
+    <button mat-button color="primary">Click me!</button>
+    <br>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+  </div>
+</div>
+<!-- =============================================================================== -->
+<div class="c2">
+  <h1> 26th May 2023</h1>
+  <h2> Angular Pipes</h2>
+  <h3> Take data input and reformat them into a desired output</h3>
+  <!-- Angular Pipes -->
+  <div class="ed">
+    <div>
+      <h3> From uppercase to lowercase</h3>
+      <h4>Before: {{lower_case}}</h4>
+      <h4>After: {{lower_case | lowercase}}</h4>
+    </div>
+    <div>
+      <h3> From lowercase to uppercase</h3>
+      <h4>Before: {{upper_case}}</h4>
+      <h4>After: {{upper_case | uppercase}}</h4>
+    </div>
+  </div>
+
+  <div class="ed">
+    <h3> Converting the date format, and using a second angular pipe to lowercase</h3>
+    <h4>Before (Date.now()): {{currentDate}}</h4>
+    <br>
+    <h4>After: {{currentDate | date}}</h4>
+    <h4>After second pipe: {{currentDate | date : 'long' | lowercase}}</h4>
+  </div>
+
+  <div class="ed">
+    <h3> Converting objects in json</h3>
+    <h4>Before: {{obj}}</h4> 
+    <h4>After: {{obj | json}} </h4>
+  </div>
+
+  <div class="ed">
+    <h3> Converting currency in json</h3>
+    <h4> Default values: value : {{num_value}} , value2: {{num_value2}}</h4>
+    <h4> Converting value to JPY: {{num_value | currency : 'JPY'}} </h4>
+    <h4> Converting value2 to percentage: {{num_value2 | percent}} </h4>
+  </div>
+</div>
+<!-- =============================================================================== -->
+<div class="c3">
+  <h1> 29th May 2023</h1>
+  <h2> Parameterized Routes</h2>
+  <h3> Parameterized Routes</h3>
+  <!-- Parameterized Routes -->
+  <div class="ed">
+    <a href="http://localhost:4200/Emmanuel_Lim/main/task-qns/">Normal</a><br>
+    <a href="http://localhost:4200/Emmanuel_Lim/main/task-qns/true">Parameterized</a><br>
+    <h3>Value of boolean is {{value}}</h3>
+  </div>
+</div>
+<!-- =============================================================================== -->
+<div class="c1">
+  <h1> 30th May 2023</h1>
+  <h2> ngForms (Two-way data binding required)</h2>
+  <form #addForm="ngForm" (submit)="submitting(addForm)">
+    <!-- Two-way data binding -->
+    <input type="text" [(ngModel)] = "firstname" name = "firstname">
+    <!-- String Interpolation -->
+    <div class="ed">
+      <h3>Using String interpolation </h3>
+      <span>{{firstname}}</span>
+    </div>
+    <!-- Property Binding -->
+    <div class="ed">
+      <h3>Using Property binding</h3> <div [innerHTML] = "firstname"></div>
+    </div>
+    
+  <input type="checkbox" [(ngModel)] = "confirmbox" name = "confirmbox"> Confirm Box <br>
+  <button type="submit">Submit to console</button>
+  </form>
+</div>
+<!-- =============================================================================== -->
+<div class="c2">
+  <h1> 31st May 2023</h1>
+  <h2> filler</h2>
+</div>
