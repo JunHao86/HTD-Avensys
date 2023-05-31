@@ -6,6 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/* Week 6 - Day 2
+ * Completed on 2023/05/30
+ */
+
 @Controller
 public class HelloController {
 
@@ -16,6 +20,8 @@ public class HelloController {
 	{
 		return "Hey! Welcome to your first WebApp!";
 	}
+	
+	//==================================================================
 	
 	//Method #2: use StringBuilder to append and return String
 	@RequestMapping("hello-html")
@@ -35,6 +41,8 @@ public class HelloController {
 		
 		return sb.toString();
 	}
+
+	//==================================================================
 	
 	//Method #3
 	@RequestMapping("hello-jsp")
