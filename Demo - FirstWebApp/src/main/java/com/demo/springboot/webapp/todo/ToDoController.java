@@ -60,10 +60,10 @@ public class ToDoController {
 	@RequestMapping(value="add-todo",method=RequestMethod.POST)
 	public String addTodo(ModelMap model, @Valid ToDo todo, BindingResult result)
 	{
-//		//Check for errors, redirect
-//		if(result.hasErrors()) {
-//			return "add-todo";
-//		}
+		//Check for errors, redirect
+		if(result.hasErrors()) {
+			return "add-todo";
+		}
 		  
 		//Retrieve name from SessionController 
 		String username = (String) model.get("name"); 
@@ -72,8 +72,8 @@ public class ToDoController {
 	}
 	//==================================================================
 	//update-todo.jsp
-	
-	@RequestMapping("update-todo")
+	 
+	@RequestMapping("update-todo") 
 	public String showUpdateTodoPage(@RequestParam int id,ModelMap model)
 	{
 		//update func here
@@ -100,4 +100,4 @@ public class ToDoController {
 
 //Missing stuff
 //Validation check 
-//css
+
