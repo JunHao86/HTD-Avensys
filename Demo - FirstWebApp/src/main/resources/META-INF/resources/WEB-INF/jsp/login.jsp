@@ -5,14 +5,14 @@
         </title>
     </head>
     <body>
-        <!-- Hey ${name}, welcome to the login page. -->
-        <pre>${errormessage}</pre>
+        Welcome to the login page.
+        <pre>${errorMessage}</pre>
 
         
         <form method="post">
-            Name:<input type="text" name="name">
-            Password:<input type="password" name="password">
-            <button type="submit">Submit to console</button>
+            Name:<input type="text" name="name"><br>
+            Password:<input type="password" name="password"><br>
+            <button type="submit">Submit</button>
         </form>
     </body>
 </html>
