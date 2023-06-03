@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-/* Week 6 - Day 3
- * Completed on 2023/05/31
+/* Week 6 - Day 4
+ * Completed on 2023/06/02
  */
 
 @Controller
@@ -100,4 +100,3 @@ public class ToDoController {
 
 //Missing stuff
 //Validation check 
-

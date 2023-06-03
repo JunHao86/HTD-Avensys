@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 import jakarta.validation.constraints.Size;
  
-/* Week 6 - Day 3
- * Completed on 2023/05/31
+/* Week 6 - Day 4
+ * Completed on 2023/06/02
  */
  
 //Database
