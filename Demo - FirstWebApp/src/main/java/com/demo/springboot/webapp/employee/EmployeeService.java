@@ -2,21 +2,43 @@ package com.demo.springboot.webapp.employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
+
+import com.demo.springboot.webapp.employee.repo.EmployeeRepository;
+
+/* Week 6 - Completed on 2023/06/04
+ * Last Updated - 2023/06/04
+ */
 
 @Service
 public class EmployeeService {
 
 	//testing without cohesion to database
 	private static List<Employee> emps = new ArrayList<>();
+	
+	//==================================================================
+	//Cohesion with Database
+	
+	private EmployeeRepository emp_repo;
 
+	public EmployeeService(EmployeeRepository emp_r) {
+		super();
+		this.emp_repo = emp_r;
+	}
+	
+	//View List
+	public List<Employee> viewEmployeeRepo(){
+		return emp_repo.findAll();
+	}
+	
 	//==================================================================
 	//Initialized variables for Unit Testing
 	
 	//used for ID auto-increment
-	private static int emp_id_counter = 0;
+	private static long emp_id_counter = 0;
 
 	//Initializing default objects; always same ArrayList upon startup
 	static {
@@ -42,7 +64,7 @@ public class EmployeeService {
 	}
 	
 	//Read Action
-	public Employee retrieveEmployee(int id){
+	public Employee retrieveEmployee(long id){
 		
 		for (int i=0;i<emps.size();i++) {
 			if (emps.get(i).getEmp_id() == id) {
@@ -64,11 +86,31 @@ public class EmployeeService {
 	}
 	
 	//Delete Action
-	public void deleteEmployee(int id) {
-		Predicate<? super Employee> predicate = emp -> emp.getEmp_id() == id;
+	public void deleteEmployee(long eid) {
+		Predicate<? super Employee> predicate = emp -> emp.getEmp_id() == eid;
 		emps.removeIf(predicate);
 	}   
  
 	//==================================================================
-	//CRUD Actions #2 (implemented with SQL Database)
+	//CRUD Actions #2 (implemented with Repository)
+	
+	//Create Action
+	public void createEmpToRepo(String username, String password, String position, boolean isActive) {
+		emp_repo.save((new Employee(username,password,position,isActive)));
+	}
+	
+	//Read Action
+	public Optional<Employee> readEmpFromRepo(long id) {
+		return emp_repo.findById(id);
+	}
+	
+	//Update Action
+	public void updateEmpInRepo(Employee emp) {
+		emp_repo.save(emp);
+	}
+	
+	//Delete ACtion
+	public void deleteEmpFromRepo(long id) {
+		emp_repo.deleteById(id);
+	}
 }

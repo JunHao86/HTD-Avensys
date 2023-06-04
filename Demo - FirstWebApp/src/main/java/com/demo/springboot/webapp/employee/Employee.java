@@ -1,32 +1,48 @@
 package com.demo.springboot.webapp.employee;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 /* Week 6 - Completed on 2023/06/03
  * Last Updated - 2023/06/03
  */
 
-//@Entity (check learn-jpa-hibernate for integration)
+@Entity
 public class Employee {
 	
-//	@Id
-	private int emp_id;
+	@Id
+	@GeneratedValue
+	private long emp_id;
 	
-//	@Column(name="employee_name")
+	@Column(name="employee_name")
 	private String emp_name;
 	
-//	@Column(name="employee_isActive")
+	@Column(name="employee_isActive")
 	private boolean emp_isActive;
 	
-//	@Column(name="employee_password")
+	@Column(name="employee_password")
 	@Size(min=8,message="Password requires 8 or more characters.")
 	private String emp_pw;
 
-//	@Column(name="employee_position")
+	@Column(name="employee_position")
 	@Size(min=8,message="Please enter his/her position within the company.")
 	private String emp_pos;
 
-	public Employee(int emp_id, String emp_name, String emp_pw, String emp_pos, boolean emp_isActive) {
+	public Employee() {}
+	
+	public Employee(String emp_name, String emp_pw, String emp_pos, boolean emp_isActive) {
+		super();
+		this.emp_name = emp_name;
+		this.emp_pw = emp_pw;
+		this.emp_pos = emp_pos;
+		this.emp_isActive = emp_isActive;
+	}
+	
+	
+	public Employee(long emp_id, String emp_name, String emp_pw, String emp_pos, boolean emp_isActive) {
 		super();
 		this.emp_id = emp_id;
 		this.emp_name = emp_name;
@@ -35,11 +51,11 @@ public class Employee {
 		this.emp_isActive = emp_isActive;
 	}
 
-	public int getEmp_id() {
+	public long getEmp_id() {
 		return emp_id;
 	}
 
-	public void setEmp_id(int emp_id) {
+	public void setEmp_id(long emp_id) {
 		this.emp_id = emp_id;
 	}
 
