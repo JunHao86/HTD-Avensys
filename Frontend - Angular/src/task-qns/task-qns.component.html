@@ -200,26 +200,113 @@
 <!-- =============================================================================== -->
 <div class="c1">
   <h1> 30th May 2023</h1>
-  <h2> ngForms (Two-way data binding required)</h2>
+  <h2> Template Driven Forms </h2>
+  <h3> ngForms (Two-way data binding required)</h3>
+  <h3> Minimal component codes, mostly in template file (.ts) </h3>
+
+  <!--  -->
+  <div class="ed">
+  <h3> All items are required,</h3>
+  <h3> First input box - minimum 10 characters</h3>
+  <h3> Second input box - maximum 5 characters</h3>
   <form #addForm="ngForm" (submit)="submitting(addForm)">
-    <!-- Two-way data binding -->
-    <input type="text" [(ngModel)] = "firstname" name = "firstname">
-    <!-- String Interpolation -->
-    <div class="ed">
-      <h3>Using String interpolation </h3>
-      <span>{{firstname}}</span>
-    </div>
-    <!-- Property Binding -->
-    <div class="ed">
-      <h3>Using Property binding</h3> <div [innerHTML] = "firstname"></div>
-    </div>
+    <!-- Text box -->
+    <input type="text" [(ngModel)] = "firstname" name = "firstname" required minlength="10"> <br>
+    <!-- Option selection -->
+    <select [(ngModel)] = "optionselection" name="optionselection" required> 
+      <option value="1">First option</option>
+      <option value="2">Second option</option>
+      <option value="3">Third option</option>
+      <option value="4">Fourth option</option>
+    </select> <br>
+    <!-- Checkbox -->
+    <input type="checkbox" [(ngModel)] = "confirmbox" name = "confirmbox" required> Confirm Box <br>
+    <!-- Text box -->
+    <textarea [(ngModel)] = "description" name = "description" required maxlength="5"></textarea><br>
     
-  <input type="checkbox" [(ngModel)] = "confirmbox" name = "confirmbox"> Confirm Box <br>
-  <button type="submit">Submit to console</button>
+    <!-- Submit button, set/reset buttons -->
+    <button type="submit" [disabled]="!addForm.valid">Submit to console</button><br>
+    <button (click)="reset(addForm)">Reset Form</button>     
+    <button (click)="set(addForm)">Revert to Default</button> 
   </form>
+  </div>
 </div>
 <!-- =============================================================================== -->
 <div class="c2">
   <h1> 31st May 2023</h1>
-  <h2> filler</h2>
+  <h2> Reactive Forms </h2>
+  <h3> Default values set with setValue method </h3>
+  <h3> ReactForm declared using either FormBuilder or FormGroup</h3>
+  <h3> If using patch value, no need to declare default values</h3>
+
+  <!-- 1. Import reactive form module in application -->
+  <!-- 2. Give name for form -->
+  <!-- 3. Include form builder and formControlName , formGroup-->
+  <!-- 4. Create form instance -->
+
+  <!--  -->
+  <div class="ed">
+    <h3> All items are required,</h3>
+    <h3> Second input box - minimum 5, maximum 13 characters</h3>
+  <form [formGroup]="reactForm">
+    <!-- Text box -->
+    <input type="text" formControlName="fn"><br>
+    <input type="text" formControlName="fnSecond"><br>
+    <textarea formControlName="description"></textarea><br>
+
+    <!-- Button -->
+    <button (click)="addval()" [disabled]="!reactForm.valid"> CLICK ON ME ! </button>
+  </form>
+  </div>
 </div>
+<!-- =============================================================================== -->
+<div class="c3">
+  <h1> 1st June 2023</h1>
+  <h2> Validation on Reactive Forms </h2>
+  <h3> Add validations within FormControl of FormGroup/FormBuilder</h3>
+  <h3> Custom error messages for each FormControl, Validators</h3>
+  <!-- <form [formGroup]="AnotherReactForm">
+    <table>
+    <tr>
+    
+    <input type="text" formControlName="anotherFn">
+    <span style="color:red" *ngIf=
+    "AnotherReactForm.get('anotherFn').hasError('required') &&
+    AnotherReactForm.get('anotherFn').touched"> Fill in the text box! </span><br> 
+
+
+    <input type="text" formControlName="anotherFnSecond">
+    <span style="color:yellow" *ngIf=
+    "AnotherReactForm.get('anotherFnSecond').hasError('maxlength') &&
+    AnotherReactForm.get('anotherFnSecond').touched">Exceeded! Maximum length: 5 characters </span><br> 
+    <textarea formControlName="anotherDescription"></textarea><br>
+    </tr>
+
+
+    <tr>
+      <div formArrayName="anotherUsers">
+        <div *ngFor="let c of AnotherReactForm.controls['anotherUsers']['controls'];let i=index;" [FormGroupName="i"]>
+          <input type="text" formControlName="anotherUsersText">
+          <button>REMOVE ROW</button> 
+          <button>ASSIGN ROW</button> 
+        </div>
+      </div>
+    </tr>
+
+    </table>
+    <button (click)="anotherAddVal()" [disabled]="!AnotherReactForm.valid"> CLICK ON ME ! </button>
+    <button (click)="anotherReset(AnotherReactForm)">CLEAR IT ALL</button> 
+    <button (click)="addUser()">ADD SOMETHING PLEASE</button> 
+  </form> -->
+
+  
+  <h2> Please refer to the following pages:</h2>
+  <h3><a href="http://localhost:4200/Emmanuel_Lim/reactive1">Reactive Form 1 - using FormGroup</a></h3>
+  <h3><a href="http://localhost:4200/Emmanuel_Lim/reactive2">Reactive Form 2 - using FormBuilder</a></h3>
+</div>
+<!-- =============================================================================== -->
+<div class="c1">
+  <h1> 1st June 2023</h1>
+</div>
+
+

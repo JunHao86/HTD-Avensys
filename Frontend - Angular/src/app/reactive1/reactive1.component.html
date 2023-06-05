@@ -1,0 +1,53 @@
+<h1>FormGroup (Reactive Form 1) works!</h1>
+
+<div class="c1">
+    <h1> 1st June 2023</h1>
+    <h2> Validation on Reactive Forms </h2>
+    <h3> Add validations within FormControl of FormGroup</h3>
+    <h3> Custom error messages for each FormControl, Validators</h3>
+      <form [formGroup]="reactForm">    
+        <table>
+          <tr>
+              <!-- Text box with touch state warning (if form has been interacted with) -->
+              <input type="text" formControlName="fn">
+              <span style="color:red" *ngIf=
+              "reactForm.get('fn').hasError('required') &&
+              reactForm.get('fn').touched"> 
+              Fill in the text box! </span><br> 
+          
+              <input type="text" formControlName="fnSecond">
+              <span style="color:orange" *ngIf=
+              "reactForm.get('fnSecond').hasError('minlength') &&
+              reactForm.get('fnSecond').touched">
+              Not enough! Minimum length: 5 characters </span>
+
+              <span style="color:orange" *ngIf=
+              "reactForm.get('fnSecond').hasError('maxlength') &&
+              reactForm.get('fnSecond').touched">
+              Exceeded! Maximum length: 13 characters </span>
+
+              <span style="color:red" *ngIf=
+              "reactForm.get('fnSecond').hasError('required') &&
+              reactForm.get('fnSecond').touched"> 
+              Fill in the text box! </span><br> 
+              
+              <textarea formControlName="description"></textarea>
+              <span style="color:orange" *ngIf=
+              "reactForm.get('description').hasError('minlength') && reactForm.get('description').touched"
+              >Not enough! Minimum length: 20 characters </span><br>
+          </tr>
+      </table>
+          <tr>
+              <!-- Form Array -->
+              <div formArrayName="users">
+                  <div *ngFor="let c of reactForm.controls['users']['controls']; let i = index">
+                      <input type="text" [formControlName]="i">
+                  </div>
+              </div>
+          </tr>
+        <!-- Button -->
+        <button (click)="AddVal()" [disabled]="!reactForm.valid"> CLICK ON ME ! </button>
+        <button (click)="Reset(reactForm)">CLEAR IT ALL</button> 
+        <!-- <button (click)="Reset(reactForm)">ADD SOMETHING PLEASE</button>  -->
+        <!-- <button>ADD SOMETHING PLEASE</button>  -->
+      </form>

@@ -10,6 +10,10 @@ import { ProductComponent } from './product/product.component';
 import { guard1Guard } from './guard1.guard';
 import { guard2Guard } from './guard2.guard';
 import { guard4Guard } from './guard4.guard';
+import { guard3Guard } from './guard3.guard';
+import { guard5Guard } from './guard5.guard';
+import { Reactive1Component } from './reactive1/reactive1.component';
+import { Reactive2Component } from './reactive2/reactive2.component';
 
 const routes: Routes = [
 
@@ -19,12 +23,12 @@ const routes: Routes = [
   path:"home",
   redirectTo:"main"
 },
+//Parameterized routes
 {
-  //Parameterized routes
-  //Used for testing ...
   path:"product/:pricing/discount/:discount_amount",
   component:ProductComponent
 },
+//Main path
 {
   path:"main",
   component:AppComponent
@@ -34,46 +38,61 @@ const routes: Routes = [
 //e.g. http://localhost:4200/.../main/...
 {
   path:"main",
+  canActivate:[guard1Guard,guard2Guard],
   children:[
+    //Bulk of my work goes here
     {
-      //Used for testing ...
-      path:"comp1",
-      component:Comp1Component
-    },
-    {
-      //used for testing Route Guard
-      path:"comp2",
-      component:Comp2Component,
-      // canActivate:[guard1Guard,guard2Guard] //guard1 = true, guard2= false, wont load
-      canMatch:[guard4Guard] //canMatch guard, 
-    },
-    {
-      //Used for testing ...
-      path:"comp3",
-      component:Comp3Component
-    },
-    {
-      //Where the bulk of my code actually gets sorted
       path:"task-qns",
-      component:TaskQnsComponent
+      component:TaskQnsComponent,
     },
+    //Parameterized Route used with task-qns
     {
-      //Parameterized Route used with task-qns
       path:"task-qns/:boolean",
       component:TaskQnsComponent
     },
+    //Used for testing ...
+    {
+      path:"comp1",
+      canDeactivate:[guard5Guard],
+      component:Comp1Component,
+    },
+    //To access comp2, otherwise guard3Guard blocks
+    {
+      path:"comp2",
+      component:Comp2Component,
+    },
+    //Edit conditions in .guard.ts file
+    {
+      path:"comp2",
+      canActivate:[guard3Guard],
+      children:[
+        {path:"comp1",component:Comp1Component,},
+        {path:"comp2",component:Comp2Component,},
+        {path:"comp3",component:Comp3Component,},
+      ]
+    },
   ]
 },
-//Contains a childpath to comp3 as well
-//Used for testing
-//Check 'payment-routing.module.ts' for more
+//Lazy Loading
+//uses loadChildren() function with inbuilt dynamic import syntax
 { 
-  
+  //Contains a childpath to comp3 as well
+  //Check 'payment-routing.module.ts' for more
   path: 'payment', 
+  canMatch:[guard4Guard],
   loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule)
-  
 },
-//For incorrect links
+{
+  path:"reactive1",
+  component:Reactive1Component
+},
+{
+  path:"reactive2",
+  component:Reactive2Component
+},
+//Wildcard Routes
+//Intercepting invalid URL / path address of application path
+//and showing Error/Page 404
 {
   path:"**",
   component:Pg404Component

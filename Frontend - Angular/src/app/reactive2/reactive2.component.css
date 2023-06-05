@@ -1,0 +1,19 @@
+/* Rotate between the three */
+.c1{
+    background-color:lavenderblush;
+    border: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.c2{
+    background-color:mediumturquoise;
+    border: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.c3{
+    background-color:lightgreen;
+    border:2px solid;
+    margin-top:5px;
+    margin-bottom:5px
+}
