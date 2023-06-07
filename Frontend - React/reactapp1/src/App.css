@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+/* Imported from old work */
+/* Rotate between the three */
+.c1{
+  background-color:lavenderblush;
+  border: 2px solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.c2{
+  background-color:mediumturquoise;
+  border: 2px solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.c3{
+  background-color:lightgreen;
+  border:2px solid;
+  margin-top:5px;
+  margin-bottom:5px
+}
+/* For example in ngClass */
+.mg{
+  background-color: grey;
+  color:aqua;
+}
+
+/* For embedded divs */
+.ed{
+  border:2px solid;
+  margin:3px;
+}
+
+/* for table examples */
+.table-ex{
+  border-style:solid;
+  border-width: 4px;
+  border-color:darkblue;
+  border-collapse: collapse;
+  text-align: center;
+  margin:3px;
+}
