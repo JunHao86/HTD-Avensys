@@ -29,5 +29,18 @@ Contents:
   - [Webpages, refer to pages with "e_" prefix](https://github.com/JunHao86/HTD-Avensys/tree/main/Demo%20-%20FirstWebApp/src/main/resources/META-INF/resources/WEB-INF/jsp)
 
 ## 3. React
-- [React]()
-  > To-do: Push Day 1 React 
+- [React](https://github.com/JunHao86/HTD-Avensys/tree/main/Frontend%20-%20React)
+  - To-do: Continuously Push React Applications over the week
+    - 1.	Firebase
+    - 2.	Contact
+    - 3.	ContactList
+    - 4.	E-Commerce (useEffect, useState)
+    - 5.	Login 
+    - 6.	LoginGoogle
+    - 7.	Todo (useState, re-written as aComponent1 in redux folder, done)
+    - 8.	WeatherForecast
+    - 9.	Chart (done)
+    - 10. Redux (done)
+    - 11. Performance (done)
+    - 12. Database (done)
+    - 13. Form Validation
