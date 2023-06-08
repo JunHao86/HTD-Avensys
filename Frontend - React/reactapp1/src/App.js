@@ -27,6 +27,7 @@ function App() {
         <h1> Welcome to React</h1>
         {/* --------------------------------- */}
         {/* Routing */}
+        {/* mobile.js */}
         <br/>
 
         <div style={{display:"flex"}}>
@@ -40,6 +41,7 @@ function App() {
 
         {/* --------------------------------- */}
         {/* Login/Logout Auth using Google Authentication */}
+        {/* firebase.js, login.js */}
         <br/>
 
         <div style={{display:"flex"}}>
@@ -62,13 +64,8 @@ function App() {
         </div>
 
         {/* --------------------------------- */}
-        {/* Redux Store */}
-        <br/>
-
-          
-
-        {/* --------------------------------- */}
         {/* One component, pass in data */}
+        {/* contact.js */}
         <br/>
         
         <div style={{display:"flex"}}>
