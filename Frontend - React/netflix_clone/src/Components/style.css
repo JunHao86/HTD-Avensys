@@ -1,0 +1,28 @@
+/* Original approach w/o bootstrap */
+
+/* ul > li > a
+{
+    text-decoration: none;
+    margin-left:20px;
+    font-size:20px;
+    font-weight: 600
+    font-family: sans-serif;
+    color: white;
+} */
+
+.container
+{
+    display:flex;
+    align-items: center;
+}
+
+.active
+{
+    font-size: 26px;
+    color: wheat;
+}
+
+.image-container::-webkit-scrollbar
+{
+    display:none;
+}
