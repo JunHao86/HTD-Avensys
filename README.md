@@ -25,4 +25,8 @@
 ## 3. React
 - [React](https://github.com/JunHao86/HTD-Avensys/tree/main/Frontend%20-%20React)
 
-### Assignment 2 : WeatherForecastApp using React's useState / useEffect (Work in Progress)
+### Assignment 2 : Social Media Application using SpringBoot / React / Firebase
+- [Git Link](https://github.com/JunHao86/FullStack-SocialMediaApp)
+  - [Front End](https://github.com/JunHao86/FullStack-SocialMediaApp/tree/main/social-media-react-app/src)
+  - [Back End](https://github.com/JunHao86/FullStack-SocialMediaApp/tree/main/socialmediaapp/src/main/java/com/socialmediaapp/socialmediaapp)
+  > Group 1 Project to create a Social Media Platform for sharing and content creation. Makes use of SpringBoot (and SpringJpaRepository), React, MySQL, and Google Firebase.
